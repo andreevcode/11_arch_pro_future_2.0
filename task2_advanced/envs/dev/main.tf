@@ -4,7 +4,7 @@ terraform {
   }
 
   backend "s3" {
-    endpoint = "storage.yandexcloud.net"
+    endpoint = "https://storage.yandexcloud.net"
     bucket   = "arch-pro-sp11-task2-tf-state-01"
     region   = "ru-central1"
     key      = "dev/terraform.tfstate" # Путь к файлу внутри бакета
@@ -15,6 +15,7 @@ terraform {
 
     skip_region_validation      = true
     skip_credentials_validation = true
+    skip_requesting_account_id  = true
   }
 }
 
