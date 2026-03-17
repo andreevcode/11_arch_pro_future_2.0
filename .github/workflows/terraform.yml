@@ -31,10 +31,10 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        run: terraform -chdir=task2/envs/dev init
+        run: terraform -chdir=task2_advanced/envs/dev init
 
       - name: Terraform Plan
-        run: terraform -chdir=task2/envs/dev plan -var-file="dev.tfvars"
+        run: terraform -chdir=task2_advanced/envs/dev plan -var-file="dev.tfvars"
 
   terraform-apply:
     name: "Terraform Apply"
@@ -51,8 +51,8 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        run: terraform -chdir=task2/envs/dev init
+        run: terraform -chdir=task2_advanced/envs/dev init
 
       - name: Terraform Apply
         # Флаг -auto-approve важен, так как в CI нет человека, который напишет 'yes'
-        run: terraform -chdir=task2/envs/dev apply -auto-approve -var-file="dev.tfvars"
+        run: terraform -chdir=task2_advanced/envs/dev apply -auto-approve -var-file="dev.tfvars"
