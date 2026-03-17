@@ -1,0 +1,58 @@
+name: "Terraform CI/CD"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# Общие переменные для всех шагов
+env:
+  YC_TOKEN: ${{ secrets.YC_IAM_TOKEN }}
+  YC_CLOUD_ID: ${{ secrets.YC_CLOUD_ID }}
+  YC_FOLDER_ID: ${{ secrets.YC_FOLDER_ID }}
+  YC_ZONE: ${{ secrets.YC_ZONE }}
+  TF_VAR_zone: ${{ secrets.YC_ZONE }}
+  TF_VAR_subnet_id: ${{ secrets.YC_SUBNET_ID }}
+  TF_VAR_ssh_pub_key: ${{ secrets.YC_SSH_PUB_KEY }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.YA_CLOUD_S3_BUCKET_SP11_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.YA_CLOUD_S3_BUCKET_SP11_ACCESS_KEY }}
+
+jobs:
+  terraform-plan:
+    name: "Terraform Plan"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform -chdir=task2/envs/dev init
+
+      - name: Terraform Plan
+        run: terraform -chdir=task2/envs/dev plan -var-file="dev.tfvars"
+
+  terraform-apply:
+    name: "Terraform Apply"
+    # Запускаем только, если мы в ветке main, Plan прошел успешно и нажата кнопка "Run workflow"
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    needs: [ terraform-plan ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform -chdir=task2/envs/dev init
+
+      - name: Terraform Apply
+        # Флаг -auto-approve важен, так как в CI нет человека, который напишет 'yes'
+        run: terraform -chdir=task2/envs/dev apply -auto-approve -var-file="dev.tfvars"
