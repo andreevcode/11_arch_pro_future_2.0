@@ -1,0 +1,52 @@
+@startuml
+skinparam sequenceMessageAlign center
+skinparam BoxPadding 10
+autonumber
+
+box "Внешние интеграции" #FFF3E0
+participant "B2B API Gateway" as GW
+end box
+
+box "Медицинский домен (Clinic)" #E8F8F5
+participant "Patient &\nBooking" as Clinic
+participant "EMR Context" as EMR
+end box
+
+box "Событийная шина (Tech)" #EAECEE
+queue "Event Streaming\nPlatform" as ESP
+end box
+
+box "Домен ИИ & Финтех" #FEF9E7
+participant "AI Inference" as AI
+participant "Billing" as Bank
+end box
+
+box "Аналитика (Data)" #E0F2F1
+participant "Analytical\nPortal" as Portal
+end box
+
+== 1. Внешний и внутренний старт ==
+GW -> ESP : **Pub:** PartnerDeviceDataReceived\n(Телеметрия от оборудования)
+Clinic -> ESP : **Pub:** PatientRegistered
+
+ESP -->> Bank : **Sub:** PatientRegistered
+ESP -->> Portal : **Sub:** (Для аналитики трафика)
+
+== 2. Основной бизнес-процесс ==
+Clinic -> ESP : **Pub:** AppointmentCompleted
+ESP -->> Bank : **Sub:** AppointmentCompleted -> **InvoiceCreated**
+ESP -->> EMR : **Sub:** AppointmentCompleted
+
+== 3. Работа с ИИ ==
+EMR -> ESP : **Pub:** AIAnalysisRequested
+ESP -->> AI : **Sub:** AIAnalysisRequested
+AI -> ESP : **Pub:** AIAnalysisCompleted
+ESP -->> EMR : **Sub:** AIAnalysisCompleted
+
+== 4. Data Mesh (Аналитика) ==
+note over Portal: Trino выполняет федеративный запрос\nк Data Lake Клиники и Финтеха
+Portal -> Clinic : **Pull:** Чтение анонимизированных витрин
+Portal -> Bank : **Pull:** Чтение финансовых отчетов
+Portal -> Portal : **Join:** Формирование кросс-доменного отчета
+
+@enduml
