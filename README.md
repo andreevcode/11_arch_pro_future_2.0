@@ -1,7 +1,7 @@
 # Результаты
 1. Terraform — модульная инфраструктура для нескольких сред. [TASK1_README.md](task1_advanced/TASK1_README.md)
 2. Terraform — интеграция с CI/CD и удалённым хранением состояния. [TASK2_README.md](task2_advanced/TASK2_README.md)
->3. Проектирование целевой архитектуры "Будущего 2.0" и оценка рисков внедрения. [TASK3_README.md](task3_advanced/TASK3_README.md)
+3. Проектирование целевой архитектуры "Будущего 2.0" и оценка рисков внедрения. [TASK3_README.md](task3_advanced/TASK3_README.md)
 >
 # Контекст
 >В этом спринте вы будете работать над кейсом компании **«Будущее 2.0»**.
