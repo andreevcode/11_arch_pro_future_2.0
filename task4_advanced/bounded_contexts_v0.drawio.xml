@@ -1,0 +1,138 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 YaBrowser/25.12.0.0 Safari/537.36" version="29.6.3">
+  <diagram name="Bounded Contexts" id="BoundedContextsDiagram">
+    <mxGraphModel dx="1240" dy="2001" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="Домен Медицина (Core)" c4Type="Domain Boundary" c4Application="Ограниченные контексты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="dom_clinic">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=2;fillColor=none;strokeColor=#1061B0;fontColor=#1061B0;labelBackgroundColor=none;align=left;verticalAlign=bottom;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="540" width="340" x="100" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Домен Финтех (Core)" c4Type="Domain Boundary" c4Application="Ограниченные контексты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="dom_bank">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=2;fillColor=none;strokeColor=#1B5E38;fontColor=#1B5E38;labelBackgroundColor=none;align=left;verticalAlign=bottom;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="350" width="340" x="960" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Домен ИИ (Core)" c4Type="Domain Boundary" c4Application="Ограниченные контексты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="dom_ai">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=2;fillColor=none;strokeColor=#A86522;fontColor=#A86522;labelBackgroundColor=none;align=left;verticalAlign=bottom;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;strokeWidth=2;" vertex="1">
+            <mxGeometry height="160" width="340" x="960" y="460" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Patient Management" c4Type="Bounded Context" c4Description="Управление пациентами, ПДн, согласия" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bc_patient">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="80" width="260" x="140" y="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Booking &amp; Appointments" c4Type="Bounded Context" c4Description="Расписание, слоты, статусы приемов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bc_booking">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="80" width="260" x="140" y="300" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Electronic Medical Record" c4Type="Bounded Context" c4Description="ЭМК, истории болезни, результаты анализов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bc_emr">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="80" width="260" x="140" y="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Billing &amp; Invoicing" c4Type="Bounded Context" c4Description="Выставление счетов, биллинг услуг" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bc_billing">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="80" width="260" x="1000" y="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Credit Services" c4Type="Bounded Context" c4Description="Кредитный скоринг, выдача займов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bc_credit">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="80" width="260" x="1000" y="300" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="AI Inference" c4Type="Bounded Context" c4Description="Нейросетевой анализ, детекция патологий" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="bc_inference">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="80" width="260" x="1000" y="480" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="rel_pat_app" edge="1" parent="1" source="bc_patient" style="endArrow=blockThin;html=1;fontSize=12;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;edgeStyle=orthogonalEdgeStyle;" target="bc_booking" value="&lt;b&gt;События пациентов&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_app_emr" edge="1" parent="1" source="bc_booking" style="endArrow=blockThin;html=1;fontSize=12;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;edgeStyle=orthogonalEdgeStyle;" target="bc_emr" value="&lt;b&gt;Завершенный прием&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_bill_cred" edge="1" parent="1" source="bc_billing" style="endArrow=blockThin;html=1;fontSize=12;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;edgeStyle=orthogonalEdgeStyle;" target="bc_credit" value="&lt;b&gt;Запрос на кредит&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#D9822B;fontColor=#D9822B;align=left;verticalAlign=top;spacing=10;dashPattern=8 4;strokeWidth=2;" value="Домен: Внешние интеграции (Tech)" vertex="1">
+          <mxGeometry height="140" width="400" x="500" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9822B;fontColor=#ffffff;strokeColor=#A86522;" value="&lt;b&gt;B2B API Gateway&lt;/b&gt;&lt;br&gt;Вход для IoT и Фармы" vertex="1">
+          <mxGeometry height="60" width="300" x="550" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C8B56;fontColor=#ffffff;strokeColor=#1B5E38;strokeWidth=3;" value="&lt;b&gt;Event Streaming Platform&lt;/b&gt;&lt;br&gt;[Домен: Событийная шина (Tech)]&lt;br&gt;Транспорт событий и Контракты (Schema Registry)" vertex="1">
+          <mxGeometry height="100" width="300" x="550" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#1A827B;fontColor=#1A827B;align=left;verticalAlign=top;spacing=10;dashPattern=8 4;strokeWidth=2;" value="Домен: Аналитика (Data)" vertex="1">
+          <mxGeometry height="140" width="400" x="500" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A827B;fontColor=#ffffff;strokeColor=#125954;" value="&lt;b&gt;Аналитический портал самообслуживания&lt;/b&gt;&lt;br&gt;Data Mesh / Trino" vertex="1">
+          <mxGeometry height="60" width="300" x="550" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-6" edge="1" parent="1" source="-9f75bcnTYc1kGgICvJw-2" style="endArrow=classic;html=1;strokeColor=#D9822B;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="-9f75bcnTYc1kGgICvJw-3" value="External Events">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-7" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#2C8B56;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;" target="-9f75bcnTYc1kGgICvJw-3" value="Integration Events">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="230" />
+            </Array>
+            <mxPoint x="960" y="230" as="sourcePoint" />
+            <mxPoint x="750" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-8" edge="1" parent="1" source="-9f75bcnTYc1kGgICvJw-5" style="endArrow=classic;html=1;strokeColor=#1A827B;dashed=1;exitX=0;exitY=0.615;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;exitPerimeter=0;" value="Federated SQL (Pull)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="767" />
+            </Array>
+            <mxPoint x="930" y="650" as="sourcePoint" />
+            <mxPoint x="280" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-9" edge="1" parent="1" source="-9f75bcnTYc1kGgICvJw-5" style="endArrow=classic;html=1;strokeColor=#1A827B;dashed=1;edgeStyle=orthogonalEdgeStyle;" value="Federated SQL (Pull)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="640" />
+              <mxPoint x="870" y="640" />
+              <mxPoint x="870" y="360" />
+            </Array>
+            <mxPoint x="680" y="907" as="sourcePoint" />
+            <mxPoint x="960" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-10" edge="1" parent="1" source="-9f75bcnTYc1kGgICvJw-5" style="endArrow=classic;html=1;strokeColor=#1A827B;dashed=1;edgeStyle=orthogonalEdgeStyle;" value="Federated SQL (Pull)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1150" y="760" />
+            </Array>
+            <mxPoint x="710" y="1010" as="sourcePoint" />
+            <mxPoint x="1150" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-11" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#2C8B56;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;" target="-9f75bcnTYc1kGgICvJw-3" value="Integration Events">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="240" />
+            </Array>
+            <mxPoint x="440" y="240" as="sourcePoint" />
+            <mxPoint x="900" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-9f75bcnTYc1kGgICvJw-12" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#2C8B56;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;" target="-9f75bcnTYc1kGgICvJw-3" value="Integration Events">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="530" />
+            </Array>
+            <mxPoint x="960" y="530" as="sourcePoint" />
+            <mxPoint x="800" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
